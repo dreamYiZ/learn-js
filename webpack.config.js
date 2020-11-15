@@ -1,19 +1,21 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
+  devtool: "inline-source-map",
   output: {
     // filename: "main.js",
     // path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: "Development",
     }),
