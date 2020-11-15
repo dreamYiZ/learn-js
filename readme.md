@@ -1,3 +1,10 @@
 # project for learn JavaScript
 
-### ----- Rentoo
+
+# Content
+
+* webpack basic config
+
+
+
+# Rentoo
